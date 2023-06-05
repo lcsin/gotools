@@ -8,10 +8,8 @@ import (
 
 func main() {
 	engine := gin.Default()
-
 	// 中间件
 	engine.Use(middleware.Cors())
-
 	// 路由组
 	routers.Init(engine)
 
