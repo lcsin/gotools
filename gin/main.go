@@ -7,13 +7,13 @@ import (
 )
 
 func main() {
-	engine := gin.Default()
+	r := gin.Default()
 
 	// 中间件
-	engine.Use(middleware.Cors())
+	r.Use(middleware.Cors())
 
 	// 路由组
-	routers.Init(engine)
+	routers.Init(r)
 
-	engine.Run(":8080")
+	r.Run(":8080")
 }

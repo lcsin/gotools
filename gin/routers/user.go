@@ -12,6 +12,8 @@ func AddUser(c *gin.Context) {
 	return
 }
 
+// GetUser
+// @Any
 func GetUser(c *gin.Context) {
 	id := c.Param("id")
 	c.JSON(http.StatusOK, message.OK(id))

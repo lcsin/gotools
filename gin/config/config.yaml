@@ -1,0 +1,14 @@
+sever:
+  name: gin
+  port: 8080
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  username: admin
+  password: 123456
+  database:
+redis:
+  host: 127.0.0.1
+  port: 6379
+  password:
+  db: 0

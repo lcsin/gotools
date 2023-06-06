@@ -2,14 +2,22 @@ package message
 
 import "net/http"
 
-type messageBody struct {
+type ResponseBody struct {
 	Code    int32
 	Message string
 	Data    any
 }
 
-func OK(data any) messageBody {
-	msg := messageBody{
+func New(code int32, message string, data any) ResponseBody {
+	return ResponseBody{
+		Code:    code,
+		Message: message,
+		Data:    data,
+	}
+}
+
+func OK(data any) ResponseBody {
+	msg := ResponseBody{
 		Code:    http.StatusOK,
 		Message: "ok",
 		Data:    data,
@@ -18,8 +26,8 @@ func OK(data any) messageBody {
 	return msg
 }
 
-func Error(code int32, message string) messageBody {
-	msg := messageBody{
+func Error(code int32, message string) ResponseBody {
+	msg := ResponseBody{
 		Code:    code,
 		Message: message,
 		Data:    nil,
